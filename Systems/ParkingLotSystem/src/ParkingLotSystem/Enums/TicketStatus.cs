@@ -1,0 +1,1 @@
+public enum TicketStatus { Active, Paid, Lost }

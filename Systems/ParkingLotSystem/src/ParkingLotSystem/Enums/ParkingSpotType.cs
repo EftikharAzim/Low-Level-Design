@@ -1,0 +1,1 @@
+public enum ParkingSpotType { Small, Medium, Large }

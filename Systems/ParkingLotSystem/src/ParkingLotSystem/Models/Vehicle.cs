@@ -1,10 +1,11 @@
-using ParkingLotSystem.Enums;
-
-namespace ParkingLotSystem.Models;
-
 public class Vehicle
 {
-    public int Id { get; set; }
-    public string LicensePlate { get; set; }
-    public VehicleType Type { get; set; }
+    public string LicensePlate { get; }
+    public VehicleType Type { get; }
+
+    public Vehicle(string licensePlate, VehicleType type)
+    {
+        LicensePlate = licensePlate;
+        Type = type;
+    }
 }

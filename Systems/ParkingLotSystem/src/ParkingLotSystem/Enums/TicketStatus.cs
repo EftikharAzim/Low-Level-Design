@@ -1,8 +1,1 @@
-namespace ParkingLotSystem.Enums;
-
-public enum TicketStatus
-{
-    Active,
-    Paid,
-    Lost
-}
+public enum TicketStatus { Active, Paid, Lost }

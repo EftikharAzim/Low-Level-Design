@@ -1,10 +1,1 @@
-namespace ParkingLotSystem.Enums;
-
-public enum ParkingSpotType
-{
-    Compact,
-    Large,
-    Handicapped,
-    Motorcycle,
-    Electric
-}
+public enum ParkingSpotType { Small, Medium, Large }

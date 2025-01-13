@@ -1,13 +1,31 @@
-using ParkingLotSystem.Enums;
-
-namespace ParkingLotSystem.Models;
-
-public class ParkingSpot
+public class ParkingSpot : IParkingSpot
 {
-    public int Id { get; set; }
-    public ParkingSpotType Type { get; set; }
-    public bool IsOccupied { get; set; }
-    public bool IsElectric { get; set; }
-    public int? VehicleId { get; set; }
-    public Vehicle? Vehicle { get; set; }
+    public string Id { get; }
+    public ParkingSpotType Type { get; }
+    public bool IsAvailable => !IsOccupied;
+    private bool IsOccupied { get; set; }
+    private Vehicle ParkedVehicle { get; set; }
+
+    public ParkingSpot(string id, ParkingSpotType type)
+    {
+        Id = id;
+        Type = type;
+        IsOccupied = false;
+    }
+
+    public bool AssignVehicle(Vehicle vehicle)
+    {
+        if (IsOccupied) return false;
+        ParkedVehicle = vehicle;
+        IsOccupied = true;
+        return true;
+    }
+
+    public bool RemoveVehicle()
+    {
+        if (!IsOccupied) return false;
+        ParkedVehicle = null;
+        IsOccupied = false;
+        return true;
+    }
 }

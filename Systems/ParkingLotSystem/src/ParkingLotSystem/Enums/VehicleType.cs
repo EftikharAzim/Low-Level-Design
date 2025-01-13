@@ -1,1 +1,8 @@
-public enum VehicleType { Car, Bike, Truck }
+namespace ParkingLotSystem.Enums;
+
+public enum VehicleType
+{
+    Car,
+    Bike,
+    Truck
+}
